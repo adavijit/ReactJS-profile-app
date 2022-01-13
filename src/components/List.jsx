@@ -8,34 +8,31 @@ const List = () => {
 
   //=> don't use variables like 'xx' , give proper name
   // also don't use let
-  let getData = async () => {
-    let userList = await getAllData();
+  const getData = async () => {
+    const userList = await getAllData();
     console.log(userList.data, "getdata");
-    const xx = userList.data;
-    return xx;
+    setUserData(userList.data);
   };
 
   //=> Only call getData and update the states from there. Don't need to use async in useEffect
-  useEffect(async () => {
-    let user = await getData();
-    setUserData(user);
+  useEffect(() => {
+    getData();
     setVisible(true);
-    console.log(userData, "data obtained");
   }, []);
 
   // console.log(userData.data,"hiiiii");
   return visible ? (
     <div>
-      <ul>
-        {userData.map((element, index) => {
+      <ul >
+        { userData.map((element, index) => {
           // => use `index` as key to avoid warnings
           console.log(element.name, "element");
           return (
-            <li>
-              <Link to={`/userdetails/${element.id}`}>{element.name}</Link>
+            <li key={index}>
+              <Link key={index} to={`/userdetails/${element.id}`}>{element.name}</Link>
             </li>
           );
-        })}
+        }) }
       </ul>
     </div>
   ) : (
