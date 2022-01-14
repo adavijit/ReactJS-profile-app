@@ -1,0 +1,62 @@
+.container{
+    border-width: 20px;
+    border-radius: 5%;
+    display: flex;
+    justify-content: center;
+    
+}
+.card-content{
+    width: 20rem;
+    height: 15rem;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    
+}
+ .card{
+    padding: 20px;
+    width: 18rem;
+    border-width: medium;
+    border-style: solid;
+    border-radius: 5%;
+    border-color: darkslategray ;
+ }
+
+ .bouncingball {
+    width:25px;
+    height:25px;
+    border-radius:100%;
+    background:coral;;
+    animation: bounce 1s;
+    transform: translateY(0px);
+    animation-iteration-count: infinite;
+    position:absolute;
+    margin:130px;
+  }
+  
+  
+  
+  
+  @keyframes bounce {
+      0% {top: 0;
+          -webkit-animation-timing-function: ease-in;
+      }
+      40% {}
+      50% {top: 130px;
+          height: 130px;
+          -webkit-animation-timing-function: ease-out;
+      }
+      55% {top: 160px; height: 100px; 
+          -webkit-animation-timing-function: ease-in;}
+      65% {top: 120px; height: 140px; 
+          -webkit-animation-timing-function: ease-out;}
+      95% {
+          top: 0;		
+          -webkit-animation-timing-function: ease-in;
+      }
+      100% {top: 0;
+          -webkit-animation-timing-function: ease-in;
+      }
+  }
+  
