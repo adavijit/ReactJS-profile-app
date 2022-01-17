@@ -43,7 +43,7 @@ const List = () => {
 
             console.log(element.name, "element");
             return (
-              <tr>
+              <tr key="index"> 
                 <td class="sl-content">
                   <Picture gender={element.gender} /></td>
                 <td class="user-content" key={index}>
