@@ -7,7 +7,7 @@ import { Picture } from "./Picture";
 
 
 const List = () => {
-  const [userData, setUserData] = useState([{}]);
+  const [userData, setUserData] = useState([]);
   const [visible, setVisible] = useState(false);
 
   //=> don't use variables like 'xx' , give proper name
@@ -27,14 +27,14 @@ const List = () => {
   // console.log(userData.data,"hiiiii");
   return visible ? (
     <div class="user-list">
-      <table>
+      <Table>
         <thead>
           <tr>
             <th>Sl.No.</th>
             <th>Usernames</th>
           </tr>
         </thead>
-        <tbody >
+        <tbody>
           <td><hr class="horizontal-line"></hr></td>
           <td><hr class="horizontal-line"></hr></td>
 
@@ -59,7 +59,7 @@ const List = () => {
             );
           })}
         </tbody>
-      </table>
+      </Table>
     </div>
   ) : (
     ""

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 const UserDetails = () => {
   //=>
-  const [userData, setUserData] = useState([{}]);
+  const [userData, setUserData] = useState({});
 
   //=>
 //   const [details, setDetails] = useState([{}]);
