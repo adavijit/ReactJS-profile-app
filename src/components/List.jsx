@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getAllData } from "../api.js";
+import "./ListStyle.css";
+import { Table } from "react-bootstrap";
 
 const List = () => {
   const [userData, setUserData] = useState([{}]);
@@ -22,18 +24,39 @@ const List = () => {
 
   // console.log(userData.data,"hiiiii");
   return visible ? (
-    <div>
-      <ul >
-        { userData.map((element, index) => {
-          // => use `index` as key to avoid warnings
-          console.log(element.name, "element");
-          return (
-            <li key={index}>
-              <Link key={index} to={`/userdetails/${element.id}`}>{element.name}</Link>
-            </li>
-          );
-        }) }
-      </ul>
+    <div class="user-list">
+      <table>
+        <thead>
+          <tr>
+            <th>Sl.No.</th>
+            <th>Usernames</th>
+          </tr>
+        </thead>
+        <tbody >
+          <td><hr class="horizontal-line"></hr></td>
+          <td><hr class="horizontal-line"></hr></td>
+
+          {userData.map((element, index) => {
+            // => use `index` as key to avoid warnings
+
+            console.log(element.name, "element");
+            return (
+              <tr>
+                <td class="sl-content">{index + 1}</td>
+                <td class="user-content" key={index}>
+                  <Link
+                    key={index}
+                    style={{ "text-decoration": "none" }}
+                    to={`/userdetails/${element.id}`}
+                  >
+                    {element.name}
+                  </Link>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
     </div>
   ) : (
     ""

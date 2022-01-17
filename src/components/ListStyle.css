@@ -1,0 +1,40 @@
+.user-list{
+    
+    text-align: center;
+    color: coral;
+    display: flex;
+    justify-content: center;
+}
+.sl-content{
+    color: black
+}
+.horizontal-line{
+    width: 50%;
+    height: 0.2px;
+    margin-left: -2px ;
+}
+.user-content{
+    text-decoration: none;
+}
+tr td{
+    list-style-type: none;
+    text-decoration: none;
+    text-align: left;
+}
+tr th{
+    text-align: left;
+}
+a:link{
+    color: black;
+}
+a :active{
+    color: blue;
+}
+a:hover{
+    color: coral;
+}
+a:visited{
+    color: rgb(151, 125, 53);
+}
+
+
