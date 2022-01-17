@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { getAllData } from "../api.js";
 import "./ListStyle.css";
 import { Table } from "react-bootstrap";
+import { Picture } from "./Picture";
+
 
 const List = () => {
   const [userData, setUserData] = useState([{}]);
@@ -42,7 +44,8 @@ const List = () => {
             console.log(element.name, "element");
             return (
               <tr>
-                <td class="sl-content">{index + 1}</td>
+                <td class="sl-content">
+                  <Picture gender={element.gender} /></td>
                 <td class="user-content" key={index}>
                   <Link
                     key={index}
