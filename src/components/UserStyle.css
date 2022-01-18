@@ -1,0 +1,30 @@
+.container{
+    border-width: 20px;
+    border-radius: 5%;
+    height: 50px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    
+}
+.card-content{
+    width: 50rem;
+    height: 25rem;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    
+}
+ .card{
+    padding: 20px;
+    width: 20rem;
+    border-width: medium;
+    border-style: solid;
+    border-radius: 5%;
+    border-color: darkslategray ;
+ }
+ .Card.Body {
+    display: flex;
+    justify-content: left;
+ }

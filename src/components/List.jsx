@@ -43,9 +43,9 @@ const List = () => {
 
             console.log(element.name, "element");
             return (
-              <tr key="index"> 
+              <tr key={index}> 
                 <td class="sl-content">
-                  <Picture gender={element.gender} /></td>
+                  <Picture gender={element.gender} picWidth="30" picHeight="30"/></td>
                 <td class="user-content" key={index}>
                   <Link
                     key={index}

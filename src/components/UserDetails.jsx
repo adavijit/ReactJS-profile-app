@@ -1,13 +1,16 @@
 import { useParams } from "react-router-dom";
 import { getOneProfileData } from "../api.js";
 import { useEffect, useState } from "react";
+import { Card } from 'react-bootstrap';
+import './UserStyle.css';
+import { Picture } from "./Picture";
 
 const UserDetails = () => {
   //=>
   const [userData, setUserData] = useState({});
 
   //=>
-//   const [details, setDetails] = useState([{}]);
+  //   const [details, setDetails] = useState([{}]);
 
   const { id } = useParams();
   console.log(id, "from pramas");
@@ -20,18 +23,29 @@ const UserDetails = () => {
   };
 
   // => call getData and from there call api to get specific user details. No need to use async in useEffect
-  useEffect( () => {
+  useEffect(() => {
     getData();
-  }, []);
+  });
 
   console.log(userData, "hi");
 
   return (
-    <div>
-      <p>Details: {id}</p>
-      <p>Name: {userData.name}</p>
-      <p>Email: {userData.email}</p>
-      <p>Gender: {userData.gender}</p>
+    <div class="container">
+      <div class="card-content">
+        <Card>
+          <Card.Body>
+            <Card.Title>Hey! {userData.name}</Card.Title>
+            <Card.Text>
+              <Picture gender={userData.gender} picWidth="90" picHeight="90"  
+              style={{ "border-radius" : "50%" }} />
+            </Card.Text>
+            
+            <p>Name: {userData.name}</p>
+            <p>Email: {userData.email}</p>
+            <p>Gender: {userData.gender}</p>
+          </Card.Body>
+        </Card>
+      </div>
     </div>
   );
 };

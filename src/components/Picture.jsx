@@ -3,10 +3,12 @@ import pic2 from "../images/female_photo.jpeg";
 
 
 export const Picture = (props) =>{
-    const pic = (props.gender === 'male')? 
-     <img src={pic1} style={{"width" : "20px", "height" : "20px"}}/> :
-     <img src={pic2} style={{"width" : "20px", "height" : "20px"}}/>
-   return pic;
+    
+  const imgWidth = props.picWidth;
+  const imgHeight = props.picHeight;
+  // const imgBorderRadius = props.picBorderRadius;
+  return (<img src={props.gender==='male'? pic1 : pic2} width={imgWidth} height={imgHeight} 
+   alt=""/>);
        
         
 }
